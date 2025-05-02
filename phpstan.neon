@@ -1,0 +1,40 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    checkGenericClassInNonGenericObjectType: false
+    treatPhpDocTypesAsCertain: false
+#    universalObjectCratesClasses:
+#        - App\Http\Resources\EntityResource
+    paths:
+        - modules/
+        -app/
+#    editorUrlTitle: '%%relFile%%:%%line%%'
+#    editorUrl: 'phpstorm://open?file=/Users/romer4ig/Projects/nwzback/%%relFile%%&line=%%line%%'
+
+    # Level 9 is the highest level
+    level: 9
+
+    ignoreErrors:
+        - '#PHPDoc tag @var#'
+        - '#PHPDoc tag @param#'
+
+    excludePaths:
+        - modules/admin/tests/*
+        - modules/admin/database/*
+        - modules/admin/resources/*
+        - modules/selection/tests/*
+        - modules/selection/database/*
+        - modules/profile/admin/database/*
+        - modules/profile/api/database/*
+        - modules/profile/api/tests/*
+        - modules/common/tests/*
+        - modules/common/database/*
+        - vendor
+        - database
+        - tests
+        - storage
+        - public
+        - ./docker
+#
+#    checkMissingIterableValueType: false

@@ -1,0 +1,14 @@
+{
+  "selection/resources/css/app.css": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "name": "app",
+    "src": "selection/resources/css/app.css",
+    "isEntry": true
+  },
+  "selection/resources/js/inertia.js": {
+    "file": "assets/inertia-_dLZYSXo.js",
+    "name": "inertia",
+    "src": "selection/resources/js/inertia.js",
+    "isEntry": true
+  }
+}
