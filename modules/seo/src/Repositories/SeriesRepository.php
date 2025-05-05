@@ -10,7 +10,6 @@ use App\Api\Models\Season;
 use App\Api\Models\Series;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 
 final class SeriesRepository extends BaseRepository
 {
@@ -26,21 +25,21 @@ final class SeriesRepository extends BaseRepository
 
     public function getSeasonById(int $id): mixed
     {
-        return Cache::remember('SeriesRepository_getSeasonById_' . $id, self::TTL, function () use ($id) {
+        return cache()->remember('SeriesRepository_getSeasonById_' . $id, self::TTL, function () use ($id) {
             return Season::query()->where(['id' => $id])->first();
         });
     }
 
     public function getEpisodeById(int $id): mixed
     {
-        return Cache::remember('SeriesRepository_getEpisodeById_' . $id, self::TTL, function () use ($id) {
+        return cache()->remember('SeriesRepository_getEpisodeById_' . $id, self::TTL, function () use ($id) {
             return Episode::query()->where(['id' => $id])->first();
         });
     }
 
     public function getSeriesById(int $id): mixed
     {
-        return Cache::remember('SeriesRepository_getSeriesById_' . $id, self::TTL, function () use ($id) {
+        return cache()->remember('SeriesRepository_getSeriesById_' . $id, self::TTL, function () use ($id) {
             return Series::query()->where(['id' => $id])->first();
         });
     }

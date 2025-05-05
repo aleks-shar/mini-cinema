@@ -16,7 +16,7 @@ final class AdminRequestMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         if ($user->role !== 'admin') {
             abort(Response::HTTP_FORBIDDEN);

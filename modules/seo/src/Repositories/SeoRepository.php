@@ -31,7 +31,7 @@ final class SeoRepository extends BaseRepository
     public function updateSeo(Seo $seo, array $data): Seo|false
     {
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         if (! $user instanceof User) {
             return false;
@@ -73,7 +73,7 @@ final class SeoRepository extends BaseRepository
     public function storeSeo(array $data): Model|false
     {
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         if (! $user instanceof User) {
             return false;

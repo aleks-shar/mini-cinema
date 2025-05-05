@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property ?int $year
  * @property string $directors
  * @property string $writers
- * @property Meta $meta
+ * @property Season $seasons
  * @property ?Carbon $release_date
  * @method filter()
  */

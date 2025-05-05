@@ -50,7 +50,7 @@ final class HistoryService extends BaseService
     public function saveForCreateDomainSettings(DomainSettings $new): void
     {
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         if (! $user instanceof User) {
             return;
@@ -69,7 +69,7 @@ final class HistoryService extends BaseService
     public function saveForUpdateDomainSettings(DomainSettings $old, DomainSettings $new): void
     {
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         if (! $user instanceof User) {
             return;
@@ -91,7 +91,7 @@ final class HistoryService extends BaseService
     public function saveForDeleteDomainSettings(DomainSettings $settings): void
     {
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         if (! $user instanceof User) {
             return;
@@ -162,7 +162,7 @@ final class HistoryService extends BaseService
         }
 
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         if (! $user instanceof User) {
             return;

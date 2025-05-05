@@ -6,11 +6,11 @@ namespace App\Api\Repositories;
 
 use App\Api\Models\Series;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Pagination\AbstractPaginator;
+use Illuminate\Contracts\Pagination\Paginator;
 
 final class SeriesRepository
 {
-    public function getList(): AbstractPaginator
+    public function getList(): Paginator
     {
         return Series::query()
             ->where(['is_abuse' => 0])

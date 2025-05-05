@@ -162,7 +162,7 @@ final class DomainSeoService extends BaseService
         }
 
         /** @var User $user */
-        $user = Auth::guard('admin')->user();
+        $user = auth()->guard('admin')->user();
 
         $email = $user->email;
 

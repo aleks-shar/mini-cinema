@@ -47,7 +47,7 @@ final class AbuseService extends BaseService
             'model_id' => $model->id,
             'category' => $category,
             'is_abuse' => 1,
-            'email' => Auth::guard('admin')->user()->email,
+            'email' => auth()->guard('admin')->user()->email,
         ]);
 
         $this->historyService->abuse($model->id, $category, true);

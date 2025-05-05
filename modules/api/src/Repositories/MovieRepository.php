@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace App\Api\Repositories;
 
-use App\Api\Models\Entity;
 use App\Api\Models\Movie;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
 
 final class MovieRepository
 {
-    public function getList(): Entity|Paginator
+    public function getList(): Paginator
     {
         return Movie::query()
             ->where(['is_abuse' => 0])
