@@ -47,9 +47,6 @@
                                     </thead>
                                     <tbody>
                                     @foreach($data as $item)
-                                        @if($item->meta->abuse || $item->meta->is_abuse)
-                                            @continue
-                                        @endif
                                         <tr>
                                             <td>{{ $item->id }}</td>
                                             <td>{{AppView::getSeriesTitleForEpisode((int)$item->id)}}</td>
