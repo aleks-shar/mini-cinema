@@ -11,7 +11,7 @@ final class SeoDataPrepare
     public static function getSeoDataForMovie(Movie $movie): array
     {
         return [
-            '%name%' => ! empty($movie->title) ? $movie->title : $movie->title_original,
+            '%name%' => $movie->title ?? $movie->title_original,
             '%year%' => $movie->year,
         ];
     }

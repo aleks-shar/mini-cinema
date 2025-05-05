@@ -14,7 +14,6 @@ final class MovieRepository
     {
         return Movie::query()
             ->where(['is_abuse' => 0])
-            ->orderByRaw('popularity desc')
             ->simplePaginate();
     }
 

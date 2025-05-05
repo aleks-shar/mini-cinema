@@ -14,7 +14,6 @@ final class SeriesRepository
     {
         return Series::query()
             ->where(['is_abuse' => 0])
-            ->orderByRaw('popularity desc')
             ->simplePaginate();
     }
 
